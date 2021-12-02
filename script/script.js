@@ -4,6 +4,7 @@ const btn = document.querySelector('button') // Button
 const errorInfo = document.querySelector('.error-info') // Error
 const cityName = document.querySelector('.city-name h2') // City name
 const icon = document.querySelector('.statusIcon') // Weather icon
+const weather = document.querySelector('.weather') // Weather type
 const temperature = document.querySelector('.temperature') // Temperature
 const humidity = document.querySelector('.humidity') // Humidity
 const pressure = document.querySelector('.pressure') // Pressure

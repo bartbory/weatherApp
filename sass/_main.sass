@@ -5,7 +5,7 @@
 
 body
     font-family: 'Mukta', sans-serif
-    background: linear-gradient(to left bottom, rgb(25, 75, 125), rgb(26, 199, 156))
+    background: linear-gradient(to right bottom, $colorLightBlue, $colorPurple)
     height: 100vh
 
 .wrapper
@@ -20,14 +20,14 @@ body
     background-image: url('https://cdn.pixabay.com/photo/2018/10/04/20/56/celebrities-3724463_960_720.jpg')
     background-repeat: no-repeat
     background-size: cover
-    color: #fff
+    color: $colorFontBase
     border-radius: 20px
     border: 4px solid $colorPurple
-    box-shadow: -24px -24px 56px 24px rgba(0,35,196,.6), 24px 24px 56px 24px rgba(255,92,243,.6)
+    box-shadow: -24px -24px 56px 24px $colorBlueAlpha, 24px 24px 56px 24px $colorVioletAlpha
     animation: .4s
 
 .photoBg
-    background-color: rgba(0,0,0,.6)
+    background-color: rgba($colorPurple,.6)
     width: 100%
     height: 100%
     padding: 24px
@@ -36,26 +36,25 @@ body
     align-items: center
     justify-content: space-around
     border-radius: 16px
-    
 
-.heading
+.heading h1
     +flexWidth
-    text-transform: uppercase
     line-height: 48px
-    font-size: 12px
+    font-size: 24px
+    color: #fff
 
 .icon
     width: 100%
     .iconbg
-        padding: 10%
+        padding: 5%
         width: auto
         height: auto
         margin: 0 auto
         background-color: $whiteAlpha
         border-radius: 8px
-        border-bottom: 3px solid rgba(0,0,0,.6)
+        border-bottom: 3px solid rgba(darken($colorViolet, 25),.6)
         border-top: 3px solid $whiteAlpha
-        box-shadow: 0px 8px 24px rgba(0,0,0,.6)
+        box-shadow: 0px 8px 24px rgba(darken($colorViolet, 25),.6)
         backdrop-filter: blur( 4px )
         img
             display: block
@@ -64,36 +63,44 @@ body
             max-width: 120px
             height: auto
             animation: .4s
+        .weather
+            text-align: center
+            margin-top: 8px
+            font-size: 20px
 
 .city-name
     +flexWidth
     h2
         font-size: 40px
         text-transform: uppercase
-
+        color: #fff
+        text-shadow: 0px 0px 8px $colorPurpleAlpha
+        
 .searchbox
     display: flex
     flex-wrap: wrap
     width: 100%
     justify-content: space-around
     input
-        background-color: rgba(0,0,0,.6)
+        background-color: #fff
         width: 70%
         padding: 8px 16px
         font-size: 16px
         border: none
         border-bottom: 1px solid $colorPurple
         border-radius: 8px
-        color: $colorPurple
+        color: #000
+        transition: .3s
         &::placeholder
-            color: $colorPurpleAlpha
+            color: #000
         &:focus
             outline: none
+            box-shadow: 0 4px 8px rgba($colorBlue,.6)
     button
         width: 28%
         font-size: 16px
         padding: 8px 16px
-        background-color: $colorPurple
+        background-color: $colorBlue
         color: #fff
         font-weight: bold
         border-radius: 8px
@@ -101,7 +108,7 @@ body
         cursor: pointer
         transition: .3s
         &:hover
-            box-shadow: 0 4px 8px rgba(0,0,0,.6)
+            box-shadow: 0 4px 8px rgba($colorBlue,.6)
 .details
     +flexWidth
     display: flex
@@ -114,10 +121,10 @@ body
         flex-grow: 1
         // height: 100%
         border-radius: 8px
-        box-shadow: 0px 8px 16px rgba(0,0,0,.6)
+        box-shadow: 0px 8px 16px rgba(darken($colorViolet, 25),.6)
         .name
             color: #fff
-            background-color: $colorBlue
+            background-color: darken($colorViolet, 25)
             border-radius: 8px 8px 0 0
         .value
             font-size: 32px
@@ -130,13 +137,11 @@ body
 
 .attribution
     +flexWidth
-    font-size: .6em
-    opacity: .3
+    font-size: 10px
+    opacity: .5
     a
-        color: #fff
+        color: $colorLightBlue
         text-decoration: none
-
-
 
 @media (max-width: 460px)
     .wrapper
@@ -154,30 +159,12 @@ body
     .searchbox
         flex-wrap: nowrap
         input
-            background-color: rgba(0,0,0,.6)
             width: 58%
-            padding: 8px 16px
             font-size: 12px
-            border: none
-            border-bottom: 1px solid $colorPurple
-            border-radius: 8px
-            color: $colorPurple
-            &::placeholder
-                color: $colorPurpleAlpha
-            &:focus
-                outline: none
+            padding: 4px 8px       
         button
             width: 38%
             font-size: 12px
-            padding: 8px 16px
-            background-color: $colorPurple
-            color: #fff
-            font-weight: bold
-            border-radius: 8px
-            border: none
-            text-align: center
-            cursor: pointer
-            transition: .3s
     .details
         +flexWidth
         display: flex
