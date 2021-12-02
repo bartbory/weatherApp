@@ -70,6 +70,7 @@ function city() {
             humidity.textContent = '--'
             pressure.textContent = '--'
             icon.setAttribute('src', "./png/unknown.png")
+            input.value = ''
         })
 }
 
