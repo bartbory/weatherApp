@@ -114,8 +114,7 @@ body {
 
 .searchbox input {
   background-color: rgba(0, 0, 0, 0.6);
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
+  width: 70%;
   padding: 8px 16px;
   font-size: 16px;
   border: none;
@@ -145,8 +144,7 @@ body {
 }
 
 .searchbox button {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  width: 28%;
   font-size: 16px;
   padding: 8px 16px;
   background-color: #ff5cf3;
@@ -222,5 +220,91 @@ body {
 .attribution a {
   color: #fff;
   text-decoration: none;
+}
+
+@media (max-width: 460px) {
+  .wrapper {
+    height: 90%;
+  }
+  .photoBg {
+    padding: 16px;
+  }
+  .heading h1 {
+    font-size: 16px;
+  }
+  .icon .iconbg img {
+    max-width: 80px;
+  }
+  .city-name h2 {
+    font-size: 24px;
+  }
+  .searchbox {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .searchbox input {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 58%;
+    padding: 8px 16px;
+    font-size: 12px;
+    border: none;
+    border-bottom: 1px solid #ff5cf3;
+    border-radius: 8px;
+    color: #ff5cf3;
+  }
+  .searchbox input::-webkit-input-placeholder {
+    color: rgba(255, 92, 243, 0.6);
+  }
+  .searchbox input:-ms-input-placeholder {
+    color: rgba(255, 92, 243, 0.6);
+  }
+  .searchbox input::-ms-input-placeholder {
+    color: rgba(255, 92, 243, 0.6);
+  }
+  .searchbox input::placeholder {
+    color: rgba(255, 92, 243, 0.6);
+  }
+  .searchbox input:focus {
+    outline: none;
+  }
+  .searchbox button {
+    width: 38%;
+    font-size: 12px;
+    padding: 8px 16px;
+    background-color: #ff5cf3;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .details {
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .details .detail {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+  }
+  .details .detail .name {
+    font-size: 12px;
+  }
+  .details .detail .value {
+    font-size: 24px;
+  }
+  .details .detail .type {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
